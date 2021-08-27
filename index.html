@@ -1,36 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+<html lang="fr">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style/reset.css" />
+      <link rel="stylesheet" href="style/style.css" />
+      <link
+         rel="icon"
+         type="img/png"
+         sizes="32x32"
+         href="./img/favicon-32x32.png"
+      />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
+      <title>Frontend Mentor | Todo app</title>
+   </head>
+   <body class="transitions" data-theme="darkTheme">
+      <div class="main__container">
+         <div class="todo">
+            <header class="header">
+               <section class="logo">
+                  <h2 class="logo">TODO</h2>
+                  <button class="roundBtn roundBtn--theme" id="theme-toggle">
+                     <img class="hidden" src="./img/icon-moon.svg" alt="moon icon to apply dark mode" />
+                     <img  src="./img/icon-sun.svg" alt="sun icon to apply light mode" />
+                  </button>
+               </section>
+               <div class="tdheader">
+                  <div class="tcontain">
+                  </div>
+                  <label for="tinput">Create a new todo</label>
+                  <input type="text" class="todo__input" name="tinput"id="tinput" placeholder="Create a new todo..." />
+               </div>
+            </header>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+            <main class="main">
+               <ul class="list_view" id="t-list">
+                  <!-- items added by JavaScript -->
+                  
+               </ul>
+               <div class="filters">
+                  <div class="filters__sides">
+                     <p class="roundBtn"><span id="items-left">5</span> item(s) left</p>
+                     <button class="roundBtn roundBtn--clear" id="clear-completed">Clear Completed</button>
+                  </div>
+                  <div class="filters__center">
+                     
+                        <input type="radio" name="filter" id="all" value="all" class="roundBtn bolded" checked>
+                        <label  class="roundBtn bolded" for="all">All</label>
+                     
+                        <input type="radio" name="filter" id="active" value="active" class="roundBtn bolded">
+                        <label class="roundBtn bolded" for="active">Active</label>
+                     
+                        <input type="radio" name="filter" id="completed" value="completed" class="roundBtn bolded">
+                        <label class="roundBtn bolded" for="completed">Completed</label>
+               </div>
+               </div>
+            </main>
 
-  Todo
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            <footer>
+               <div class="attribution">
+                  <p>
+                  	Drag and drop the recorder list
+                  </p>
+               </div>
+            </footer>
+         </div>
+      </div>
+      <script>
+         document.addEventListener("DOMContentLoaded",function(){
+           let node = document.querySelector('.transitions');
+           node.classList.remove('transitions');
+         });
+       </script>
+      <script src="js/script.js"></script>
+   </body>
 </html>
